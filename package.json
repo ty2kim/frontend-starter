@@ -6,19 +6,24 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "gulp": "./node_modules/.bin/gulp",
-    "browser-sync": "./node_modules/.bin/browser-sync"
+    "browser-sync": "./node_modules/.bin/browser-sync",
+    "browserify": "./node_modules/.bin/browser-sync"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.23.7",
+    "browserify": "^16.2.0",
     "eslint": "^4.19.1",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
     "gulp-clean": "^0.4.0",
     "gulp-clean-css": "^3.9.3",
     "gulp-imagemin": "^4.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^4.0.1",
-    "gulp-uglify": "^3.0.0"
+    "gulp-uglify": "^3.0.0",
+    "jquery": "^3.3.1",
+    "vinyl-source-stream": "^2.0.0"
   }
 }
