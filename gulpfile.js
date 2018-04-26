@@ -33,9 +33,12 @@ var path = {
 		'css': 'dist/assets/css/',
 		'lib': 'dist/assets/lib/',
 		'images': 'dist/assets/images/'
-	}
+	},
+	'ext': ['node_modules/jquery/dist/jquery.min.js',
+		'node_modules/bootstrap/dist/css/bootstrap.min.css',
+		'node_modules/bootstrap/dist/js/bootstrap.min.js',
+		'node_modules/popper.js/dist/umd/popper.min.js']
 }
-
 
 gulp.task('clean', ['removeDist', 'removeBundle', 'removeCSS']);
 
@@ -68,6 +71,11 @@ gulp.task('copyLibrary', function () {
 		.pipe(browserSync.reload({
 			stream: true
 		}));
+});
+
+gulp.task('loadLibrary', function () {
+	return gulp.src(path.ext)
+		.pipe(gulp.dest(path.dist.lib));
 });
 
 gulp.task('copyImages', function () {
@@ -123,6 +131,7 @@ gulp.task('bundle', function () {
 		.pipe(gulp.dest(path.app.js.root));
 });
 
+
 gulp.task('browserSync', function () {
 	browserSync.init({
 		server: {
@@ -139,4 +148,4 @@ gulp.task('watch', ['browserSync'], function () {
 	gulp.watch(path.app.lib, ['copyLibrary']);
 });
 
-gulp.task('default', ['copyHTML', 'copyLibrary', 'copyScripts', 'copyStyles', 'copyImages', 'watch']);
+gulp.task('default', ['loadLibrary', 'copyHTML', 'copyLibrary', 'copyScripts', 'copyStyles', 'copyImages', 'watch']);

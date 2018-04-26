@@ -1,4 +1,3 @@
-var $ = require('jquery');
 var home = require('./home.js');
 
 $(document).ready(function () {
