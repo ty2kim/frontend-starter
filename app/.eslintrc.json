@@ -7,8 +7,8 @@
     "extends": "eslint:recommended",
     "rules": {
         "indent": [
-            "error",
-            "tab"
+            1,
+            4
         ],
         "linebreak-style": [
             "error",
@@ -19,7 +19,7 @@
             "single"
         ],
         "semi": [
-            "error",
+            1,
             "always"
         ],
         "no-console": 1,
